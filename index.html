@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana da Manutenção | Cond. Tempo Bello | NIMIAR</title>
+    <meta name="description" content="Semana da Manutenção exclusiva para moradores do Condomínio Tempo Bello. Higienização de ar-condicionado, estofados, reparos elétricos e hidráulicos.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Semana da Manutenção | Cond. Tempo Bello">
+    <meta property="og:description" content="Serviços de manutenção com preços especiais para moradores do Tempo Bello. 09 a 15 de março.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --azul-escuro: #0D1B2A;
+            --dourado: #C5A572;
+            --dourado-claro: #D4B896;
+            --branco: #FFFFFF;
+            --cinza-claro: #F5F5F5;
+            --verde-economia: #2E7D32;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--azul-escuro);
+            color: var(--branco);
+            line-height: 1.6;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--azul-escuro) 0%, #1B3A5A 100%);
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C5A572' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo img {
+            height: 200px;
+            width: auto;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: var(--dourado);
+            color: var(--azul-escuro);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(32px, 6vw, 56px);
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+        
+        .hero h1 span {
+            color: var(--dourado);
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 10px;
+        }
+        
+        .hero-date {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--dourado);
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--dourado);
+            color: var(--azul-escuro);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(197, 165, 114, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(197, 165, 114, 0.4);
+        }
+        
+        .cta-button svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        /* Serviços Section */
+        .servicos {
+            padding: 80px 20px;
+            background: var(--branco);
+            color: var(--azul-escuro);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 50px;
+        }
+        
+        .section-title span {
+            color: var(--dourado);
+        }
+        
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .servico-card {
+            background: var(--cinza-claro);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        
+        .servico-card:hover {
+            border-color: var(--dourado);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .servico-card.expandable {
+            position: relative;
+        }
+        
+        .servico-card.expandable::after {
+            content: 'Ver detalhes ▼';
+            display: block;
+            font-size: 12px;
+            color: var(--dourado);
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .servico-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .servico-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--azul-escuro);
+        }
+        
+        .servico-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .servico-preco {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .preco-apartir {
+            font-size: 13px;
+            color: #888;
+        }
+        
+        .preco-atual {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--azul-escuro);
+        }
+        
+        .preco-obs {
+            font-size: 12px;
+            color: #888;
+        }
+        
+        /* Como Funciona */
+        .como-funciona {
+            padding: 80px 20px;
+            background: var(--azul-escuro);
+        }
+        
+        .passos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .passo {
+            text-align: center;
+        }
+        
+        .passo-numero {
+            width: 60px;
+            height: 60px;
+            background: var(--dourado);
+            color: var(--azul-escuro);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+        
+        .passo h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .passo p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Diferenciais */
+        .diferenciais {
+            padding: 60px 20px;
+            background: var(--cinza-claro);
+            color: var(--azul-escuro);
+        }
+        
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .diferencial {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .diferencial-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .diferencial h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .diferencial p {
+            font-size: 13px;
+            color: #666;
+        }
+        
+        /* CTA Final */
+        .cta-final {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--dourado) 0%, var(--dourado-claro) 100%);
+            text-align: center;
+            color: var(--azul-escuro);
+        }
+        
+        .cta-final h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .cta-final p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button-dark {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--azul-escuro);
+            color: var(--branco);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button-dark:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(13, 27, 42, 0.3);
+        }
+        
+        .telefone-grande {
+            font-size: 32px;
+            font-weight: 800;
+            margin-top: 30px;
+            color: var(--azul-escuro);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 30px 20px;
+            background: var(--azul-escuro);
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+        }
+        
+        footer a {
+            color: var(--dourado);
+            text-decoration: none;
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: var(--dourado);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(197, 165, 114, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--azul-escuro);
+        }
+        
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        .modal {
+            background: var(--branco);
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .modal-header {
+            background: var(--azul-escuro);
+            color: var(--branco);
+            padding: 25px 30px;
+            border-radius: 20px 20px 0 0;
+            position: sticky;
+            top: 0;
+        }
+        
+        .modal-header h3 {
+            font-size: 22px;
+            font-weight: 700;
+        }
+        
+        .modal-header .preco {
+            color: var(--dourado);
+            font-size: 18px;
+            margin-top: 5px;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--branco);
+            font-size: 28px;
+            cursor: pointer;
+            line-height: 1;
+        }
+        
+        .modal-body {
+            padding: 30px;
+            color: var(--azul-escuro);
+        }
+        
+        .modal-body h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--azul-escuro);
+        }
+        
+        .modal-body ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .modal-body ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 14px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .modal-body ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--dourado);
+            font-weight: bold;
+        }
+        
+        .modal-body ul.nao-inclui li::before {
+            content: '✗';
+            color: #cc0000;
+        }
+        
+        .modal-cta {
+            display: block;
+            width: 100%;
+            background: var(--dourado);
+            color: var(--azul-escuro);
+            padding: 15px;
+            border-radius: 50px;
+            text-align: center;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        
+        /* Touch improvements for mobile */
+        .servico-card {
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            user-select: none;
+        }
+        
+        .servico-card.expandable {
+            cursor: pointer;
+        }
+        
+        .modal-overlay {
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .modal {
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 60px 20px;
+            }
+            
+            .logo img {
+                height: 110px;
+            }
+            
+            .servicos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .telefone-grande {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo">
+                <img src="data:image/png;base64,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" alt="NIMIAR">
+            </div>
+            
+            <span class="badge">Exclusivo para Moradores</span>
+            
+            <h1>Semana da <span>Manutenção</span></h1>
+            
+            <p class="hero-subtitle">Condomínio Tempo Bello</p>
+            
+            <p class="hero-date">09 a 15 de Março</p>
+            
+            <a href="https://wa.me/5511988127008?text=Oi!%20Quero%20agendar%20um%20servi%C3%A7o%20na%20Semana%20da%20Manuten%C3%A7%C3%A3o%20-%20Tempo%20Bello" class="cta-button">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Agendar pelo WhatsApp
+            </a>
+        </div>
+    </section>
+    
+    <!-- Serviços -->
+    <section class="servicos" id="servicos">
+        <div class="container">
+            <h2 class="section-title">Serviços <span>Disponíveis</span></h2>
+            
+            <div class="servicos-grid">
+                <div class="servico-card expandable" onclick="openModal('modal-ar')">
+                    <div class="servico-icon">❄️</div>
+                    <h3>Higienização de Ar-Condicionado</h3>
+                    <p>Limpeza completa de filtros, serpentina e bandeja. Aplicação de bactericida.</p>
+                    <div class="servico-preco">
+                        <span class="preco-apartir">a partir de</span>
+                        <span class="preco-atual">R$ 250</span>
+                    </div>
+                </div>
+                
+                <div class="servico-card expandable" onclick="openModal('modal-estofados-colchao')">
+                    <div class="servico-icon">🛋️</div>
+                    <h3>Higienização de Estofados e Colchões</h3>
+                    <p>Limpeza profunda de sofás, poltronas, cadeiras e colchões. Eliminação de ácaros e bactérias.</p>
+                    <div class="servico-preco">
+                        <span class="preco-apartir">a partir de</span>
+                        <span class="preco-atual">R$ 35</span>
+                    </div>
+                </div>
+                
+                <div class="servico-card expandable" onclick="openModal('modal-box')">
+                    <div class="servico-icon">🚿</div>
+                    <h3>Limpeza Técnica de Box</h3>
+                    <p>Remoção de manchas, limpeza de rejuntes, polimento do vidro e aplicação anti-mofo.</p>
+                    <div class="servico-preco">
+                        <span class="preco-apartir">a partir de</span>
+                        <span class="preco-atual">R$ 189</span>
+                    </div>
+                </div>
+                
+                <div class="servico-card expandable" onclick="openModal('modal-reparos')">
+                    <div class="servico-icon">🔧</div>
+                    <h3>Reparos e Serviços Gerais</h3>
+                    <p>Elétrica, hidráulica, fixações, montagem de móveis, ajustes em portas e mais.</p>
+                    <div class="servico-preco">
+                        <span class="preco-apartir">a partir de</span>
+                        <span class="preco-atual">R$ 150</span>
+                        <span class="preco-obs">por hora</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Como Funciona -->
+    <section class="como-funciona">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Como <span>Funciona</span></h2>
+            
+            <div class="passos">
+                <div class="passo">
+                    <div class="passo-numero">1</div>
+                    <h3>Escolha o Serviço</h3>
+                    <p>Veja a lista acima e escolha o que você precisa</p>
+                </div>
+                
+                <div class="passo">
+                    <div class="passo-numero">2</div>
+                    <h3>Chame no WhatsApp</h3>
+                    <p>Mande uma mensagem informando seu apartamento e serviço</p>
+                </div>
+                
+                <div class="passo">
+                    <div class="passo-numero">3</div>
+                    <h3>Agende o Horário</h3>
+                    <p>Escolha o melhor dia e horário entre 09 e 15 de março</p>
+                </div>
+                
+                <div class="passo">
+                    <div class="passo-numero">4</div>
+                    <h3>Receba em Casa</h3>
+                    <p>Nosso profissional vai até você no horário combinado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Diferenciais -->
+    <section class="diferenciais">
+        <div class="container">
+            <h2 class="section-title">Por que escolher a <span>NIMIAR</span>?</h2>
+            
+            <div class="diferenciais-grid">
+                <div class="diferencial">
+                    <div class="diferencial-icon">👷</div>
+                    <h3>Parceiros Homologados</h3>
+                    <p>Profissionais selecionados e treinados na nossa cultura de qualidade</p>
+                </div>
+                
+                <div class="diferencial">
+                    <div class="diferencial-icon">✅</div>
+                    <h3>Acompanhamento Completo</h3>
+                    <p>Do agendamento até a conclusão, estamos junto com você</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Garanta seu Horário!</h2>
+            <p>Atendimento exclusivo para moradores do Tempo Bello<br>de 09 a 15 de março</p>
+            
+            <a href="https://wa.me/5511988127008?text=Oi!%20Quero%20agendar%20um%20servi%C3%A7o%20na%20Semana%20da%20Manuten%C3%A7%C3%A3o%20-%20Tempo%20Bello" class="cta-button-dark">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Agendar Agora
+            </a>
+            
+            <p class="telefone-grande">📱 (11) 98812-7008</p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>NIMIAR Facilities & Manutenção Residencial</p>
+        <p style="margin-top: 10px;">
+            <a href="https://instagram.com/nimiar_hf" target="_blank">@nimiar_hf</a>
+        </p>
+    </footer>
+    
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5511988127008?text=Oi!%20Quero%20agendar%20um%20servi%C3%A7o%20na%20Semana%20da%20Manuten%C3%A7%C3%A3o%20-%20Tempo%20Bello" class="whatsapp-float" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    
+    <!-- Modais -->
+    
+    <!-- Modal Ar-Condicionado -->
+    <div class="modal-overlay" id="modal-ar" onclick="closeModal(event, 'modal-ar')">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3>❄️ Higienização de Ar-Condicionado</h3>
+                <p class="preco">a partir de R$ 250</p>
+                <button class="modal-close" onclick="closeModal(event, 'modal-ar')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h4>O que está incluso:</h4>
+                <ul>
+                    <li>Limpeza completa dos filtros</li>
+                    <li>Higienização da serpentina (evaporadora)</li>
+                    <li>Limpeza da bandeja de drenagem</li>
+                    <li>Verificação do dreno</li>
+                    <li>Aplicação de bactericida/sanitizante</li>
+                    <li>Limpeza externa do gabinete</li>
+                </ul>
+                
+                <h4>Valores por tipo:</h4>
+                <ul>
+                    <li>Split até 12.000 BTUs: R$ 250</li>
+                    <li>Split 18.000 a 24.000 BTUs: R$ 300</li>
+                    <li>Cassete/Piso-Teto: R$ 350</li>
+                </ul>
+                
+                <a href="https://wa.me/5511988127008?text=Oi!%20Quero%20agendar%20higieniza%C3%A7%C3%A3o%20de%20ar-condicionado%20-%20Tempo%20Bello" class="modal-cta">
+                    Agendar pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Estofados e Colchões (Unificado) -->
+    <div class="modal-overlay" id="modal-estofados-colchao" onclick="closeModal(event, 'modal-estofados-colchao')">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3>🛋️ Higienização de Estofados e Colchões</h3>
+                <p class="preco">a partir de R$ 35</p>
+                <button class="modal-close" onclick="closeModal(event, 'modal-estofados-colchao')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h4>🛋️ Estofados - O que está incluso:</h4>
+                <ul>
+                    <li>Aspiração profunda com equipamento profissional</li>
+                    <li>Aplicação de produto específico para tecido</li>
+                    <li>Escovação para remoção de sujeira</li>
+                    <li>Extração com máquina extratora</li>
+                    <li>Remoção de manchas superficiais</li>
+                    <li>Aplicação de produto anti-ácaro (opcional)</li>
+                </ul>
+                
+                <h4>Valores - Estofados:</h4>
+                <ul>
+                    <li>Sofá 2 lugares: R$ 140</li>
+                    <li>Sofá 3 lugares: R$ 160</li>
+                    <li>Sofá 4 lugares ou L: R$ 200</li>
+                    <li>Poltrona: R$ 80</li>
+                    <li>Cadeira de jantar: R$ 35/unidade</li>
+                    <li>Puff: R$ 50</li>
+                </ul>
+                
+                <hr style="margin: 25px 0; border: none; border-top: 2px solid #eee;">
+                
+                <h4>🛏️ Colchões - O que está incluso:</h4>
+                <ul>
+                    <li>Aspiração profunda com filtro HEPA</li>
+                    <li>Aplicação de produto anti-ácaro</li>
+                    <li>Eliminação de ácaros e bactérias</li>
+                    <li>Remoção de manchas superficiais</li>
+                    <li>Desodorização</li>
+                </ul>
+                
+                <h4>Valores - Colchões:</h4>
+                <ul>
+                    <li>Colchão Solteiro: R$ 35</li>
+                    <li>Colchão Casal: R$ 119</li>
+                    <li>Colchão Queen: R$ 139</li>
+                    <li>Colchão King: R$ 159</li>
+                </ul>
+                
+                <a href="https://wa.me/5511988127008?text=Oi!%20Quero%20agendar%20higieniza%C3%A7%C3%A3o%20de%20estofados%20ou%20colch%C3%A3o%20-%20Tempo%20Bello" class="modal-cta">
+                    Agendar pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Box -->
+    <div class="modal-overlay" id="modal-box" onclick="closeModal(event, 'modal-box')">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3>🚿 Limpeza Técnica de Box</h3>
+                <p class="preco">a partir de R$ 189</p>
+                <button class="modal-close" onclick="closeModal(event, 'modal-box')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h4>O que está incluso:</h4>
+                <ul>
+                    <li>Remoção de manchas de água dura</li>
+                    <li>Limpeza de rejuntes</li>
+                    <li>Polimento do vidro</li>
+                    <li>Limpeza de ralos e sifões</li>
+                    <li>Aplicação de produto anti-mofo</li>
+                    <li>Limpeza das ferragens</li>
+                    <li>Limpeza das borrachas de vedação</li>
+                    <li>Remoção de resíduos de sabonete</li>
+                    <li>Limpeza do piso interno</li>
+                    <li>Higienização do ralo</li>
+                </ul>
+                
+                <h4>⚠️ NÃO inclui:</h4>
+                <ul class="nao-inclui">
+                    <li>Troca de rejunte</li>
+                    <li>Troca de borrachas</li>
+                    <li>Reparo de vidros</li>
+                    <li>Substituição de ferragens</li>
+                </ul>
+                
+                <a href="https://wa.me/5511988127008?text=Oi!%20Quero%20agendar%20limpeza%20t%C3%A9cnica%20de%20box%20-%20Tempo%20Bello" class="modal-cta">
+                    Agendar pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Reparos -->
+    <div class="modal-overlay" id="modal-reparos" onclick="closeModal(event, 'modal-reparos')">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3>🔧 Reparos e Serviços Gerais</h3>
+                <p class="preco">a partir de R$ 150/hora</p>
+                <button class="modal-close" onclick="closeModal(event, 'modal-reparos')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h4>⚡ Serviços Elétricos:</h4>
+                <ul>
+                    <li>Troca de tomadas e interruptores</li>
+                    <li>Instalação de luminárias e spots</li>
+                    <li>Verificação de disjuntores</li>
+                    <li>Instalação de ventiladores de teto</li>
+                    <li>Troca de lâmpadas em locais altos</li>
+                    <li>Instalação de campainha</li>
+                </ul>
+                
+                <h4>💧 Serviços Hidráulicos:</h4>
+                <ul>
+                    <li>Troca de torneiras e registros</li>
+                    <li>Reparo de sifão</li>
+                    <li>Desentupimento de ralos</li>
+                    <li>Regulagem de caixa acoplada</li>
+                    <li>Troca de flexíveis</li>
+                    <li>Vedação de vazamentos simples</li>
+                </ul>
+                
+                <h4>🔨 Serviços Gerais (Marido de Aluguel):</h4>
+                <ul>
+                    <li>Fixação de quadros e espelhos</li>
+                    <li>Montagem de móveis</li>
+                    <li>Ajuste de portas e gavetas</li>
+                    <li>Instalação de varais</li>
+                    <li>Instalação de prateleiras</li>
+                    <li>Instalação de cortinas e persianas</li>
+                    <li>Troca de fechaduras</li>
+                    <li>Pequenos reparos em geral</li>
+                </ul>
+                
+                <p style="font-size: 13px; color: #666; margin-top: 15px; padding: 10px; background: #f5f5f5; border-radius: 8px;">
+                    <strong>Obs:</strong> Valor por hora de trabalho. Material não incluso (pode ser fornecido pelo cliente ou adquirido separadamente).
+                </p>
+                
+                <a href="https://wa.me/5511988127008?text=Oi!%20Quero%20agendar%20um%20servi%C3%A7o%20de%20reparos%20-%20Tempo%20Bello" class="modal-cta">
+                    Agendar pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Função para abrir modal - compatível com mobile
+        function openModal(modalId) {
+            var modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        // Função para fechar modal
+        function closeModal(event, modalId) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            var modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+        
+        // Inicialização quando DOM estiver pronto
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adicionar eventos de toque/clique aos cards expandíveis
+            var cards = document.querySelectorAll('.servico-card.expandable');
+            
+            cards.forEach(function(card) {
+                var modalId = card.getAttribute('onclick');
+                if (modalId) {
+                    // Extrair o ID do modal do onclick
+                    var match = modalId.match(/openModal\('([^']+)'\)/);
+                    if (match) {
+                        var targetModalId = match[1];
+                        
+                        // Remover onclick inline
+                        card.removeAttribute('onclick');
+                        
+                        // Adicionar evento de clique/toque
+                        card.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            openModal(targetModalId);
+                        });
+                        
+                        // Adicionar evento de toque para mobile
+                        card.addEventListener('touchend', function(e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            openModal(targetModalId);
+                        });
+                    }
+                }
+            });
+            
+            // Fechar modal ao clicar no overlay
+            var overlays = document.querySelectorAll('.modal-overlay');
+            overlays.forEach(function(overlay) {
+                overlay.addEventListener('click', function(e) {
+                    if (e.target === overlay) {
+                        overlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                overlay.addEventListener('touchend', function(e) {
+                    if (e.target === overlay) {
+                        e.preventDefault();
+                        overlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+            
+            // Impedir que cliques no modal fechem o overlay
+            var modals = document.querySelectorAll('.modal');
+            modals.forEach(function(modal) {
+                modal.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+                modal.addEventListener('touchend', function(e) {
+                    e.stopPropagation();
+                });
+            });
+        });
+        
+        // Fechar modal com ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.active').forEach(function(modal) {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>
